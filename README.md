@@ -1,0 +1,1 @@
+Following along "Angular Tutorial for Beginners" from [fireship.io](https://fireship.io/courses/angular)
