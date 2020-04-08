@@ -1,22 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-square',
   template: `
-    <p>
-      New coin flip every {{ nSeconds }} seconds: {{ headsOrTails }}
-    </p>
+    <button>{{ value }}</button>
   `,
   styles: [
   ],
 })
 export class SquareComponent {
-
-  headsOrTails
-  nSeconds = 3
-
-  constructor() {
-    setInterval(() => this.headsOrTails = Math.random() > 0.5 ? 'HEADS' : 'TAILS', this.nSeconds*1000)
-  }
+  
+  @Input() value: 'X' | 'O';
 
 }
