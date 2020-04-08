@@ -4,12 +4,14 @@ import { Component } from '@angular/core';
   selector: 'app-square',
   template: `
     <p>
-      square works!
+      Refresh to flip a coin: {{ headsOrTails }}
     </p>
   `,
   styles: [
   ],
 })
 export class SquareComponent {
+
+  headsOrTails = Math.random() > 0.5 ? 'HEADS' : 'TAILS'
 
 }
