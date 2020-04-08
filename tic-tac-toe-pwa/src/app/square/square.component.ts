@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-square',
   template: `
     <p>
-      Refresh to flip a coin: {{ headsOrTails }}
+      New coin flip every {{ nSeconds }} seconds: {{ headsOrTails }}
     </p>
   `,
   styles: [
@@ -12,6 +12,11 @@ import { Component } from '@angular/core';
 })
 export class SquareComponent {
 
-  headsOrTails = Math.random() > 0.5 ? 'HEADS' : 'TAILS'
+  headsOrTails
+  nSeconds = 3
+
+  constructor() {
+    setInterval(() => this.headsOrTails = Math.random() > 0.5 ? 'HEADS' : 'TAILS', this.nSeconds*1000)
+  }
 
 }
